@@ -30,9 +30,8 @@ class Item(Resource):
         if ItemModel.find_by_name(name):
             return {'message': "Item '{}' already exists".format(name)}
 
-        parser = reqparse.RequestParser()
-        parser.add_argument('price')
-        data = parser.parse_args()
+
+        data = Item.parser.parse_args()
 
         item = ItemModel(name, data['price'], data['store_id'])
 
