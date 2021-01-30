@@ -7,6 +7,7 @@ from security import authenticate, identity
 from resources.item import Item, ItemList
 from resources.user import UserRegister
 from resources.store import Store, StoreList
+import PyMySQL
 
 app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
